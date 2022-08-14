@@ -1,0 +1,79 @@
+.day {
+  height: 5em;
+  width: 5em;
+  background-color: white;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.colorpicker {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -100%;
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 200%;
+  height: 200%;
+  background-color: hsl(246, 80%, 60%);
+  border-radius: 10px;
+  padding: 10px;
+  opacity: 0;
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 40%,
+    64% 40%,
+    50% 63%,
+    34% 40%,
+    0 40%
+  );
+  transition: all 0.5s;
+}
+
+.colorpicker div:hover {
+  transform: scale(1.2);
+}
+
+.colorpicker .red {
+  cursor: pointer;
+  width: 30%;
+  height: 30%;
+  background-color: hsl(348, 100%, 68%);
+  transition: all 0.5s;
+}
+.colorpicker .yellow {
+  transition: all 0.5s;
+  cursor: pointer;
+  width: 30%;
+  height: 30%;
+  background-color: hsl(43, 84%, 65%);
+}
+.colorpicker .green {
+  transition: all 0.5s;
+  cursor: pointer;
+  width: 30%;
+  height: 30%;
+  background-color: hsl(145, 58%, 55%);
+}
+
+.colorpickerfadein {
+  bottom: -50%;
+  opacity: 1;
+}
+
+.cursor {
+  cursor: default;
+}
+
+@media screen and (max-width: 600px) {
+  .colorpicker div:hover {
+    transform: scale(1);
+  }
+}
